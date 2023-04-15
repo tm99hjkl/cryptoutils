@@ -1,0 +1,3 @@
+# cryptoutils
+CTFのcryptoの簡単な問題をシェル上で素早く解くためのツール
+
