@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo "obase=2; $1" | bc
+if read arg; then
+    echo "obase=2; $arg" | bc
+fi
