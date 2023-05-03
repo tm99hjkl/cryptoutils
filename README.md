@@ -53,3 +53,10 @@ $ echo 314159265358979 | to2
 ```
 
 **`to16`- decimal to hex**
+
+**`caesars` - caesar cipher**
+```
+$ caesars | grep cpaw
+fsdz{Fdhvdu_flskhu_lv_fodvvlfdo_flskhu}
+cpaw{Caesar_cipher_is_classical_cipher}
+```
