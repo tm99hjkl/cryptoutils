@@ -1,4 +1,4 @@
-SRCS := to2.sh to16.sh l2b.sh b2l.sh anal.sh nthroot.sh
+SRCS := to2.sh to16.sh l2b.sh b2l.sh anal.sh nthroot.sh caesars.sh
 INSTALL_DIR := ~/opt/bin
 BINS := $(patsubst %.sh,$(INSTALL_DIR)/%,$(SRCS))
 
