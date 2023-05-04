@@ -1,17 +1,20 @@
 #!/bin/bash
 
-file=$1
-
+# preamble
 echo -e "% \tcount \tline"
 
-unique_line=$(sort $file | uniq)
-ln=$(cat $file | wc -l)
+# get unique lines and total line number of the file
+file=$1
+unique_lines=$(sort $file | uniq)
+loc=$(cat $file | wc -l) # lines of code
 
-acc=""
-for line in $unique_line; do
-    cnt=$(grep -o $line $file | wc -l)
-    p=$(echo "scale=5; $cnt / $ln" | bc)
-    acc+=$(echo "$p \t$cnt \t$line\n")
+# calculate the frequency of each unique line
+result=""
+for uline in $unique_lines; do
+    count=$(grep -o $uline $file | wc -l)
+    percent=$(echo "scale=5; $count / $loc" | bc)
+    result+=$(echo "$percent \t$count \t$uline\n")
 done
 
-echo -e "$(echo -e $acc | sort -r -n)"
+# output result
+echo -e "$(echo -e $result | sort -r -n)"
